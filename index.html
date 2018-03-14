@@ -6,6 +6,10 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
+  <div class="btn">
+    <button onclick="this.innerHTML='Press Q to stop'">Let's party!</button>
+  </div>
+
   <div class="keys">
     <div data-key="65" class="key">
       <kbd>A</kbd>
@@ -74,6 +78,17 @@
       }
       e.target.classList.remove('playing');
     }
+
+    function generateRandomKey() {
+      const chars = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
+      var index = Math.round(Math.random() * (chars.length - 1));
+      return chars[index];
+    }
+
+    $('button').on("click", function(){
+      var randomKey = $('<h1>Press A</h1>');
+      $('.btn').append(randomKey);
+    });
 
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend', removeTransition));

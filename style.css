@@ -3,9 +3,25 @@ html {
   font-size: 14px;
 }
 
+button {
+  background-color: white;
+  border-color: orange;
+  border-width: 0.2rem;
+  border-radius: 0.8rem;
+  height: 3rem;
+  width: 15rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.btn {
+  text-align: center;
+  padding: 1.5rem;
+}
+
 .keys {
   display:flex;
-  min-height: 100vh;
+  min-height: 80vh;
   align-items: center;
   justify-content: center;
 }
@@ -31,4 +47,9 @@ html {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
+}
+
+.random {
+  font-size: 10rem;
+  color: orange;
 }
