@@ -86,7 +86,7 @@
     }
 
     $('button').on("click", function(){
-      var randomKey = $('<h1>Press A</h1>');
+      var randomKey = $('<h1>Press ' + generateRandomKey() + '</h1>');
       $('.btn').append(randomKey);
     });
 
