@@ -86,13 +86,16 @@
     }
 
     $('button').on("click", function(){
-      var randomKey = $('<h1>Press ' + generateRandomKey() + '</h1>');
-      $('.btn').append(randomKey);
+      setInterval(function() {
+        var randomKey = $('<h1>Press ' + generateRandomKey() + '</h1>');
+        $('.btn').append(randomKey);
+      }, 700);
     });
 
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend', removeTransition));
     window.addEventListener('keydown', playSound);
+
   </script>
 
 
