@@ -6,8 +6,8 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
-  <div data-key="65" class="keys">
-    <div class="key">
+  <div class="keys">
+    <div data-key="65" class="key">
       <kbd>A</kbd>
       <p class="sound">clap</p>
     </div>
@@ -56,16 +56,17 @@
   <audio data-key="76" src="sounds/scissors-shears.wav"></audio>
 
   <script>
-    window.addEventListener('keydown', function(e){
+    function playSound(e) {
       const audio = document.querySelector(`audio[data-key = "${e.keyCode}"]`);
-      const key = document.querySelector(`.key[data-key = "${e.keyCode}"]`);
+      const key = document.querySelector(`div[data-key = "${e.keyCode}"]`);
       if (!audio) {
         return;
       }
+      key.classList.add('playing');
       audio.currentTime = 0;
       audio.play();
-      key.classList.add('playing');
-    });
+      console.log(key);
+    }
 
     function removeTransition(e) {
       if (e.propertyName !== 'transform') {
@@ -76,6 +77,7 @@
 
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    window.addEventListener('keydown', playSound);
   </script>
 
 

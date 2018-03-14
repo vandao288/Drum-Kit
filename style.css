@@ -18,7 +18,7 @@ html {
   width: 6rem;
   border: 0.1rem solid black;
   border-radius: 0.5rem;
-  transition: all 0.07s;
+  transition: all .07s;
 }
 
 .playing {
